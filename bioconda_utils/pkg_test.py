@@ -121,10 +121,12 @@ def test_package(
 
     conda_bld_dir = os.path.abspath(os.path.dirname(os.path.dirname(path)))
 
-    sp.check_call([utils.bin_for('conda'), 'index', os.path.dirname(path)])
+    #sp.check_call([utils.bin_for('conda'), 'index', os.path.dirname(path)])
     # always build noarch index to make conda happy
-    sp.check_call([utils.bin_for('conda'), 'index', os.path.join(conda_bld_dir, "noarch")])
+    #sp.check_call([utils.bin_for('conda'), 'index', os.path.join(conda_bld_dir, "noarch")])
+    sp.check_call([utils.bin_for('conda'), 'index', conda_bld_dir])
 
+    
     spec = get_image_name(path)
 
     if "local" not in channels:
