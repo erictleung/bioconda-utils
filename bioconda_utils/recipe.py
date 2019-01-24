@@ -131,6 +131,11 @@ class Recipe():
         return os.path.join(self.basedir, self.reldir, "meta.yaml")
 
     @property
+    def dir(self):
+        """Path to recipe folder"""
+        return os.path.join(self.basedir, self.reldir)
+
+    @property
     def config(self):
         """Per-recipe configuration parameters
 
